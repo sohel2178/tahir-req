@@ -1,0 +1,17 @@
+// const createDeviceSchema = z.object({
+//   id: z.string().min(5, "IMEI must be at least 5 characters"),
+//   device_model: z.string().min(1, "Device model is required"),
+//   vehicle_model: z.string().optional(),
+//   chasis_number: z.string().optional(),
+//   reference: z.string().min(1, "Reference is required"),
+//   registration_number: z.string().min(1, "Registration number is required"),
+//   vehicle_type: z.nativeEnum(VehicleType),
+//   mileage: z.coerce.number().min(0).optional(),
+//   congestion_consumption: z.coerce.number().min(0).optional(),
+//   service_charge: z.coerce.number().min(0).optional(),
+//   device_sim_number: z.string().min(5, "SIM number is required"),
+//   center_number: z.string().optional(),
+//   speed_limit: z.coerce.number().min(10, "Minimum speed limit is 10"),
+//   max_temp: z.coerce.number(),
+//   min_temp: z.coerce.number(),
+// });
