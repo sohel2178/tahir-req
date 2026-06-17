@@ -96,7 +96,7 @@ export default function DevicesPage() {
             placeholder="Search devices..."
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
-            className="border rounded-md px-3 py-2 w-[250px]"
+            className="border rounded-md px-3 py-2 w-62.5"
           />
 
           {(user?.role === "admin" || user?.role === "manager") && (

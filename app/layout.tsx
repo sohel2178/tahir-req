@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   title: "Tiktiki-Web",
   description: "A Light Weight Device Management System",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/tiktiki_logo.png",
+    apple: "/tiktiki_logo.png",
+  },
 };
 
 export default function RootLayout({
