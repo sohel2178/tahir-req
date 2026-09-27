@@ -52,7 +52,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { onChildChanged, ref } from "firebase/database";
-import { database } from "@/lib/firebase-client";
+import { database } from "@/lib/firebase";
 import { RedisGeo } from "@/types/device";
 
 export function useLiveGeo(deviceId: string, initialGeo?: RedisGeo | null) {

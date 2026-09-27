@@ -4,7 +4,7 @@ import { Marker } from "@react-google-maps/api";
 
 import React, { useEffect, useRef, useState } from "react";
 import { getGreatCircleBearing } from "geolib";
-import { database, ref, onChildChanged } from "@/lib/firebase-client";
+import { database, ref, onChildChanged } from "@/lib/firebase";
 import VehiclePoliline from "./VehiclePoliline";
 import { defaultGeo, Device, RedisGeo } from "@/types/device";
 import UserVehicleInfo from "../motion/UserVehicleInfo";
@@ -42,7 +42,7 @@ function LocationMarker({ device, mapRef }: { device: Device; mapRef?: any }) {
 
       const rotation = getGreatCircleBearing(
         { latitude: oldGeo.lat, longitude: oldGeo.lng },
-        { latitude: newGeo.lat, longitude: newGeo.lng }
+        { latitude: newGeo.lat, longitude: newGeo.lng },
       );
       setRotation(rotation);
 

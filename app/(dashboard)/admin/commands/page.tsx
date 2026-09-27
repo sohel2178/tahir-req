@@ -113,7 +113,7 @@ export default function AdminCommands() {
   };
 
   const isValidIMEI = (imei: string) => {
-    return /^\d{15}$/.test(imei);
+    return /^\d{10,20}$/.test(imei);
   };
 
   const fetchCommands = async () => {

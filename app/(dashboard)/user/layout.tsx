@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { BottomNav } from "@/components/users/BottomNav";
 
 import { usePathname } from "next/navigation";
+import UserNotificationProvider from "@/components/providers/UserNotificationProvider";
 
 export default function UserLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -14,6 +15,8 @@ export default function UserLayout({ children }: { children: ReactNode }) {
       <header className="shrink-0 bg-[#16364d] text-white px-4 py-3 z-20">
         <h1 className="text-lg font-semibold">Tiktiki</h1>
       </header>
+
+      <UserNotificationProvider />
 
       {/* SCROLLABLE CONTENT */}
       <main className="flex-1 overflow-y-auto pb-20">{children}</main>

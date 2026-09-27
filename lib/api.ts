@@ -17,6 +17,7 @@ import {
 } from "@/types/report";
 import { Payment } from "@/types/payment";
 import { Command } from "@/types/command";
+import { register } from "module";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5555";
 
@@ -79,34 +80,34 @@ export const UserAPI = {
   },
 
   adminUsers: async (
-  page: number = 1,
-  limit: number = 10,
-  search: string = ""
-) => {
-  const res = await api.get("/users/admin", {
-    params: {
-      page,
-      limit,
-      search,
-    },
-  });
+    page: number = 1,
+    limit: number = 10,
+    search: string = "",
+  ) => {
+    const res = await api.get("/users/admin", {
+      params: {
+        page,
+        limit,
+        search,
+      },
+    });
 
-  return {
-    data: res.data.data.map((u: any) => ({
-      id: u._id,
-      email: u.email,
-      name: u.name,
-      role: u.role,
-      contact: u.contact,
-      organization_name: u.organization_name,
-      address: u.address,
-      image: u.image,
-      token: u.token,
-      managerId: u.managerId,
-    })),
-    pagination: res.data.pagination,
-  };
-},
+    return {
+      data: res.data.data.map((u: any) => ({
+        id: u._id,
+        email: u.email,
+        name: u.name,
+        role: u.role,
+        contact: u.contact,
+        organization_name: u.organization_name,
+        address: u.address,
+        image: u.image,
+        token: u.token,
+        managerId: u.managerId,
+      })),
+      pagination: res.data.pagination,
+    };
+  },
 
   create: async (data: Partial<User> & { password: string }): Promise<User> => {
     const res = await api.post("/users/create", data);
@@ -140,6 +141,10 @@ export const UserAPI = {
       token: u.token,
       managerId: u.managerId,
     }));
+  },
+
+  registerFCMToken: async (token: string): Promise<void> => {
+    await api.post("/users/update-token", { token });
   },
 };
 

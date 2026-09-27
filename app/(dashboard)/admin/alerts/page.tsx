@@ -17,7 +17,7 @@ export default function AdminAlerts() {
   const [alerts, setAlerts] = useState<Alert[]>([]);
 
   const isValidIMEI = (imei: string) => {
-    return /^\d{15}$/.test(imei);
+    return /^\d{10,20}$/.test(imei);
   };
 
   const fetchAlerts = async () => {
@@ -90,7 +90,7 @@ export default function AdminAlerts() {
             </div>
 
             {/* Scrollable Body */}
-            <div className="max-h-[700px] overflow-y-auto">
+            <div className="max-h-175 overflow-y-auto">
               {alerts.map((alert) => (
                 <div
                   key={alert._id}

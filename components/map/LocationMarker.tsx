@@ -124,7 +124,7 @@
 import { Marker } from "@react-google-maps/api";
 import React, { useEffect, useRef, useState } from "react";
 import { getGreatCircleBearing } from "geolib";
-import { database, ref, onChildChanged } from "@/lib/firebase-client";
+import { database, ref, onChildChanged } from "@/lib/firebase";
 
 import VehiclePoliline from "./VehiclePoliline";
 import VehicleInfo from "../motion/VehicleInfo";
